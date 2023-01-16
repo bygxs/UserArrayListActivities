@@ -22,11 +22,11 @@ public class UserActivity extends AppCompatActivity {
 
         textViewGreeting =findViewById(R.id.textViewGreeting);
 
-        if(getIntent() !=null && getIntent().getExtras() !=null && getIntent().hasExtra(MainActivity.USERS_KEY)) {
-            ArrayList<User> users = (ArrayList<User>) getIntent().getSerializableExtra(MainActivity.USERS_KEY);
+        if(getIntent() !=null && getIntent().getExtras() !=null && getIntent().hasExtra("users")) {
+            ArrayList<User> users = (ArrayList<User>) getIntent().getSerializableExtra("users");
             Collections.shuffle(users);
             User user =users.get(0);
-            textViewGreeting.setText("hello " + user.name);
+            textViewGreeting.setText("Hello " + user.name);
         }
 
         setTitle("User Activity");
